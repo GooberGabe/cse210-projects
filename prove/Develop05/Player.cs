@@ -41,7 +41,7 @@ namespace Develop05
         }
 
         public string GetRank() {
-            string output = "";
+            string output = "Peasant";
             string[] ranks = new string[] {
                 "Peasant", "Knight", "Lord", "Prince", "King", "Emperor", "Demigod", "Deity"
             };
@@ -103,7 +103,7 @@ namespace Develop05
             if (choice != "x") {
                 int pointValue = filteredQuests[int.Parse(choice)].DoQuest();
                 if (pointValue > 0) {
-                    Console.WriteLine($"Congratulations! You earned {pointValue}");
+                    Console.WriteLine($"Congratulations! You earned {pointValue} points.");
                 } else {
                     Console.WriteLine("Congratulations! You made progress toward this quest.");
                 }
