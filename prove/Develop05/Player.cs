@@ -46,7 +46,7 @@ namespace Develop05
                 "Peasant", "Knight", "Lord", "Prince", "King", "Emperor", "Demigod", "Deity"
             };
             for (int i = 0; i < ranks.Length; i++) {
-                if (points > Math.Pow(10, i)) {
+                if (points >= Math.Pow(10, i)) {
                     output = ranks[i];
                 }
             }
