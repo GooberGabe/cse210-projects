@@ -25,12 +25,13 @@ namespace Final_Project
 
         public void SetVolume(double volume)
         {
-            audioThread.media.Volume = volume;
+            if (audioThread != null) audioThread.media.Volume = volume;
         }
 
         public double GetVolume()
         {
-            return audioThread.media.Volume;
+            if (audioThread != null) return audioThread.media.Volume;
+            else return 0;
         }
 
         public bool IsPlaying()
@@ -63,6 +64,7 @@ namespace Final_Project
             if (trackPath != null)
             {
                 MediaPlayer media = new MediaPlayer();
+                trackPath = Path.GetFullPath(trackPath);
                 media.Open(new Uri(trackPath));
                 media.Play();
 
@@ -79,7 +81,7 @@ namespace Final_Project
 
         public string ShowStatus()
         {
-            return $"{(IsPlaying() ? (new DirectoryInfo(GetAudioThread().filename).Name + ", " + GetVolume() + " % Volume") : "Not Playing")}";
+            return $"{(IsPlaying() ? (new DirectoryInfo(GetAudioThread().filename).Name + ", " + GetVolume() + " Volume") : "Not Playing")}";
         }
 
         public void Interact()
@@ -120,7 +122,7 @@ namespace Final_Project
 
         public string Serialize()
         {
-            return $"Name:{GetName()}+Location:{_fileDirectory}+Type:{this.GetType().ToString()}";
+            return $"Name#{_name}+Location#{_fileDirectory}+Type#{this.GetType().ToString()}";
         }
 
 

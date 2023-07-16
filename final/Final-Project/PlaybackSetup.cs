@@ -67,7 +67,7 @@ namespace Final_Project
 
         private string ParseAttribute(string[] attributes, int index)
         {
-            return attributes[index].Split(':')[1];
+            return attributes[index].Split('#')[1];
         }
 
         public List<Category> GetCategories()
