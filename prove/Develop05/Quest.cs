@@ -3,7 +3,6 @@ namespace Develop05 {
         protected int _pointValue;
         protected string _title;
         protected string _description;
-
         protected bool _isComplete;
 
         public abstract int DoQuest();
