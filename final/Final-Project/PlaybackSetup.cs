@@ -23,7 +23,7 @@ namespace Final_Project
             {
                 output += (category.Serialize() + "\n");
             }
-            string fileName = "./setup.txt/";
+            string fileName = "setup.txt";
 
             using (StreamWriter outputFile = new StreamWriter(fileName))
             {
